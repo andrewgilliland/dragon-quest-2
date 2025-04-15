@@ -2,13 +2,19 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Monster;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
 
 Route::get('/monsters', function () {
-    return Inertia::render('monsters');
+
+    $monsters = Monster::getAllMonsters();
+
+    return Inertia::render('monsters', [
+        'monsters' => $monsters,
+    ]);
 })->name('monsters');
 
 Route::middleware(['auth', 'verified'])->group(function () {

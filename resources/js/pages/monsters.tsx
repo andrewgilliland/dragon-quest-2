@@ -2,7 +2,9 @@ import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
 
 export default function Monsters() {
-    const { auth } = usePage<SharedData>().props;
+    const { monsters } = usePage<SharedData>().props;
+
+    console.log(monsters);
 
     return (
         <>

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 class Monster implements \JsonSerializable {
-    private string $size;
     private string $alignment;
     private int $armor_class;
     private int $hit_points;
@@ -15,13 +14,13 @@ class Monster implements \JsonSerializable {
     private int $wisdom;
     private int $charisma;
 
-    public function __construct(private string $name,  private string $description,  private string $type, $size, $alignment, $armor_class, $hit_points, $speed, $strength, $dexterity, $constitution, $intelligence, $wisdom, $charisma) {
+    public function __construct(private string $name = "",  private string $description = "",  private string $type = "", private string $size = "", $alignment = "", $armor_class, $hit_points, $speed, $strength, $dexterity, $constitution, $intelligence, $wisdom, $charisma) {
         // Initialize the properties with default values or from parameters
         $this->name = $name;
-        $this->description =   $description ?? '';
-        $this->type = $type ?? '';
-        $this->size = $size ?? '';
-        $this->alignment = $alignment ?? '';
+        $this->description =   $description;
+        $this->type = $type;
+        $this->size = $size;
+        $this->alignment = $alignment;
         $this->armor_class = $armor_class ?? 0;
         $this->hit_points = $hit_points ?? 0;
         $this->speed = $speed ?? 0;

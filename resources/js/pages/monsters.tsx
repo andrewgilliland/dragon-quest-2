@@ -23,7 +23,7 @@ export default function Monsters() {
                         </Link>
                     </nav>
                 </header>
-                <div className="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
+                <div className="flex w-full flex-col items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
                     <main className="flex w-full max-w-[335px] flex-col-reverse lg:max-w-4xl lg:flex-row">
                         <div className="flex-1 rounded-br-lg rounded-bl-lg bg-white p-6 pb-12 text-[13px] leading-[20px] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-tl-lg lg:rounded-br-none lg:p-20 dark:bg-[#161615] dark:text-[#EDEDEC] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]">
                             <h1 className="mb-1 font-medium">Monsters</h1>
@@ -40,6 +40,23 @@ export default function Monsters() {
                             />
                         </div>
                     </main>
+                    <section className="mt-12">
+                        <h2></h2>
+
+                        <div className="flex flex-col gap-4">
+                            {monsters.map((monster) => (
+                                <div
+                                    key={monster.id}
+                                    className="flex items-center justify-between rounded-lg bg-white p-4 dark:bg-[#161615] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]"
+                                >
+                                    <div className="dark:text-[#A1A09A]">
+                                        <h3 className="text-lg font-semibold">{monster.name}</h3>
+                                        <p className="text-sm">{monster.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
                 </div>
                 <div className="hidden h-14.5 lg:block"></div>
             </div>

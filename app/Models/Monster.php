@@ -37,4 +37,10 @@ class Monster {
         $this->wisdom = 0;
         $this->charisma = 0;
     }
+
+    public static function getAllMonsters(): array {
+        // This method should return all monsters from the database
+        // For now, we will return an empty array
+        return [];
+    }
 }
